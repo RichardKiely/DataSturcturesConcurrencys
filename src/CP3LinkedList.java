@@ -74,7 +74,7 @@ public class CP3LinkedList<E> {
 				found = true;
 			current = current.next;
 		}
-		return true;
+		return found;
 	}
 
 }
