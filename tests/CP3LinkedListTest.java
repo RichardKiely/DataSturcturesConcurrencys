@@ -1,3 +1,4 @@
+/*import Lab2.CP3LinkedList;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -49,4 +50,4 @@ class CP3LinkedListTest {
         list.addFirst("Stue");
      assertEquals(true,list.contains("Stue"));
     }
-}
+}*/
