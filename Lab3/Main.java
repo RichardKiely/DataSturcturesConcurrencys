@@ -16,16 +16,16 @@ public class Main {
         while(balance && index < expression.length()){
             char ch =  expression.charAt(index);
 
-            if(ch == '{' || ch == '[' || ch == '('){
+            if(isOpen(ch)){
                 stack.addFirst(ch);
-            }else if(ch == '}' || ch == ']'|| ch == ')'){
+            }else if(isClosed(ch)){
                     if(stack.isEmpty()){
                         balance = false;
                     }else{
 
                         char topChar = stack.removeFirst();
                         boolean matching = isMatch(topChar,ch);
-                        if(matching){
+                        if(!matching){
                             balance = false;
                         }
                     }
@@ -40,12 +40,18 @@ public class Main {
 
     }
     private static boolean isOpen(char ch){
-        return true;
+        if(ch == '{' || ch == '(' || ch == '[' || ch == '<')
+                return true;
+        return false;
+    }
+    private static boolean isClosed(char ch){
+        if(ch == '}'|| ch == ')'|| ch == ']'|| ch == '>')
+            return true;
+        return false;
     }
     private static boolean isMatch(char top, char bottom){
-        if(top == '{' && bottom == '}')
-            if(top == '(' && bottom == ')')
-                if(top == '[' && bottom == ']')
+        if(top == '{' && bottom == '}' || top == '(' && bottom == ')' ||
+                top == '[' && bottom == ']' || top =='<' && bottom == '>')
                     return true;
 
        return false;
