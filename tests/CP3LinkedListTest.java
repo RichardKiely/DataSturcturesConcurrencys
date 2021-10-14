@@ -1,4 +1,5 @@
-/*import Lab2.CP3LinkedList;
+import Lab2.CP3LinkedList;
+import Lab4.Factorial;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -27,7 +28,7 @@ class CP3LinkedListTest {
     @Test
     void print() {
     }
-
+/*
     @Test
     void size() {
 
@@ -44,10 +45,37 @@ class CP3LinkedListTest {
 
     }
 
+*/
+
+    @Test
+    void sum(){
+        int [] list = {10};
+        int actual = Factorial.sum(list);
+        assertEquals(10,actual);
+
+        int [] list1 = {1,2,3,4};
+        assertEquals(10,Factorial.sum(list1));
+
+    }
+    @Test
+    void size() {
+
+        assertEquals(0,list.size());
+
+        list.addFirst("Sue");
+        assertEquals(1,list.size());
+
+        list.addFirst("Sue");
+        assertEquals(2,list.size());
+
+        list.addFirst("Sue");
+        list.addFirst("Bob");
+        assertEquals(4,list.size());
+    }
 
     @Test
     void contains() {
         list.addFirst("Stue");
      assertEquals(true,list.contains("Stue"));
     }
-}*/
+}

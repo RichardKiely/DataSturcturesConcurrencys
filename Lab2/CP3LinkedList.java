@@ -1,5 +1,7 @@
 package Lab2;
 
+import org.junit.platform.engine.support.hierarchical.Node;
+
 import java.util.NoSuchElementException;
 //singly linked list with reference to first node only 
 
@@ -55,7 +57,7 @@ public class CP3LinkedList<E> {
 			current = current.next;
 		}
 	}
-	public int size(){
+	/*public int size(){
 
 		Node temp = first;
 		int size = 0;
@@ -66,7 +68,19 @@ public class CP3LinkedList<E> {
 		}
 		return size;
 
+	}*/
+	private int sizeSub(Node head) {
+		if  (head == null)
+			return 0;
+		else return 1 +
+				sizeSub(head.next);
 	}
+	public int size() {
+		return sizeSub(first);
+	}
+
+
+
 	public boolean contains(E e){
 
 		Node current = first;
@@ -78,5 +92,6 @@ public class CP3LinkedList<E> {
 		}
 		return found;
 	}
+
 
 }
