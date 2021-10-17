@@ -1,7 +1,5 @@
 package Lab2;
 
-import org.junit.platform.engine.support.hierarchical.Node;
-
 import java.util.NoSuchElementException;
 //singly linked list with reference to first node only 
 
@@ -50,12 +48,28 @@ public class CP3LinkedList<E> {
 			throw new NoSuchElementException();
 		first = first.next;
 	}
-	public void print(){
+	/*public void print(){
 		Node current = first;
 		while(current != null){
 			System.out.println(current.data);
 			current = current.next;
 		}
+	}*/
+
+	public void print(){
+		printSub(first);
+	}
+
+	private void printSub(Node head) {
+		if (head == null) {
+			return;
+		} else {
+			while (head != null) {
+				System.out.println(head.data);
+				printSub(head.next);
+			}
+		}
+
 	}
 	/*public int size(){
 
@@ -69,6 +83,7 @@ public class CP3LinkedList<E> {
 		return size;
 
 	}*/
+
 	private int sizeSub(Node head) {
 		if  (head == null)
 			return 0;
@@ -95,3 +110,4 @@ public class CP3LinkedList<E> {
 
 
 }
+

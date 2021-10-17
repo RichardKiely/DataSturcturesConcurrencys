@@ -27,6 +27,7 @@ class CP3LinkedListTest {
 
     @Test
     void print() {
+
     }
 /*
     @Test
@@ -75,7 +76,7 @@ class CP3LinkedListTest {
 
     @Test
     void contains() {
-        list.addFirst("Stue");
-     assertEquals(true,list.contains("Stue"));
+        list.addFirst("Stuey");
+        assertEquals(false,list.contains("Stue"));
     }
 }
