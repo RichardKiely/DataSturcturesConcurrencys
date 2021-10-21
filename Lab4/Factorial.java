@@ -2,9 +2,6 @@ package Lab4;
 // Factorial.java
 // Recursive factorial method
 
-import org.junit.platform.engine.support.hierarchical.Node;
-
-import java.sql.Array;
 
 public class Factorial {
 
