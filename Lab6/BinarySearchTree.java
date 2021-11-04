@@ -47,6 +47,7 @@ public class BinarySearchTree<E extends Comparable> {
                         current.right = newNode;
                     } else {
                         current = current.right;
+                        notSet = false;
                     }
                 } else {
                     // go left
@@ -54,6 +55,7 @@ public class BinarySearchTree<E extends Comparable> {
                         current.left = newNode;
                     } else {
                         current = current.left;
+                        notSet = false;
                     }
                 }
             }
